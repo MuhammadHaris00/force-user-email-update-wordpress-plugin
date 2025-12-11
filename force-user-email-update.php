@@ -120,6 +120,7 @@ function hrs_email_update_form($atts) {
                     <h2 class="hrs-heading">Vielen Dank</h2>
                     <p>Sie erhalten in den nächsten Minuten eine Bestätigung zur E-Mail Aktualisierung 
                     an die von Ihnen neu hinterlegte E-Mail Adresse. Bitte prüfen Sie auch Ihren Spam Ordner.</p>
+                    <button class="hrs-button hrs-profile-button" href="https://forstbetriebsgemeinschaft-nuernbergerland.de/downloads/">Zum Profil</button>
                 </div>';
 
                 hrs_send_email_update_confirmation($user->ID, $new_email);
@@ -217,7 +218,7 @@ function hrs_send_email_update_confirmation($user_id, $new_email) {
 					<body style="font-family:Arial,sans-serif;line-height:1.5;color:#333;">
 					<div style="max-width:600px;margin:0 auto;padding:20px;border:1px solid #ddd;border-radius:5px;">
 						<h2 style="color:#2c3e50;">Vielen Dank, ' . esc_html($username) . '!</h2>
-						<p>Sie erhalten in den nächsten Minuten eine Bestätigung zur E-Mail Aktualisierung an die von Ihnen neu hinterlegte E-Mail Adresse. Bitte prüfen Sie auch Ihren Spam Ordner.</p>
+						<p>Ihre E-Mail Adresse wurde soeben aktualisiert.</p>
 						<hr style="border:none;border-top:1px solid #eee;margin:20px 0;">
 						<p><strong>Benutzername:</strong> ' . esc_html($username) . '</p>
 						<p>Unter der folgenden Adresse kannst du dein Passwort festlegen:</p>
