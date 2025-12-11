@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Force User Email Update
  * Description: Forces Users to Update their Email.
- * Version: 1.0
+ * Version: 1.0.1
  * Author: Muhammad Haris
  */
 
@@ -115,6 +115,15 @@ function hrs_email_update_form($atts) {
 						.hrs-success .hrs-heading+p{
 						text-align:center;
 			}
+                    .hrs-button.hrs-profile-button{
+                        display: block;
+                        margin: auto !important;
+                        background: #ECC87D;
+                        color: #fff;
+                        border:none;
+                        border-radius: 0;
+                        padding: 8px 20px;
+                    }
 				</style>
                 <div class="hrs-success">
                     <h2 class="hrs-heading">Vielen Dank</h2>
