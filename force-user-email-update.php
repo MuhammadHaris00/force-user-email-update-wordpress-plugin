@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Force User Email Update
  * Description: Forces Users to Update their Email.
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: Muhammad Haris
  */
 
