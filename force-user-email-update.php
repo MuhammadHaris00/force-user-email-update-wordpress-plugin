@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Force User Email Update
  * Description: Forces Users to Update their Email.
- * Version: 1.0.2
+ * Version: 1.0.3
  * Author: Muhammad Haris
  */
 
@@ -47,6 +47,8 @@ function hrs_plugin_deactivate() {
  * Format: YYYY-MM-DD HH:MM:SS
  */
 define('EMAIL_REDIRECT_CUTOFF', '2025-11-07 00:00:00');
+define('EMAIL_CHANGE_FORM_LINK','/e-mail-aktualisieren/');
+define('DOWNLOADS_PAGE_LINK'.'/downloads/');
 
 
 
@@ -123,13 +125,15 @@ function hrs_email_update_form($atts) {
                         border:none;
                         border-radius: 0;
                         padding: 8px 20px;
+                        text-decoration:none;
+                        width:fit-content;
                     }
 				</style>
                 <div class="hrs-success">
                     <h2 class="hrs-heading">Vielen Dank</h2>
                     <p>Sie erhalten in den nächsten Minuten eine Bestätigung zur E-Mail Aktualisierung 
                     an die von Ihnen neu hinterlegte E-Mail Adresse. Bitte prüfen Sie auch Ihren Spam Ordner.</p>
-                    <button class="hrs-button hrs-profile-button" href="https://forstbetriebsgemeinschaft-nuernbergerland.de/downloads/">Zum Profil</button>
+                    <a class="hrs-button hrs-profile-button" href="https://forstbetriebsgemeinschaft-nuernbergerland.de/downloads/">Zum Profil</a>
                 </div>';
 
                 hrs_send_email_update_confirmation($user->ID, $new_email);
@@ -317,9 +321,9 @@ add_action('template_redirect', function() {
     $email_changed = get_user_meta($user->ID, 'email_changed', true);
     $email_changed = ($email_changed === '1') ? '1' : '0';
 
-    $redirect_url = ($email_changed === '1')
-        ? home_url('/downloads/')
-        : home_url('/e-mail-aktualisieren/');
+    $redirect_url = ($email_changed === '0')
+        ? home_url(EMAIL_CHANGE_FORM_LINK)
+        : home_url(DOWNLOADS_PAGE_LINK);
 
     error_log("redirect-check: user {$user->ID} → email_changed = {$email_changed}, redirecting to {$redirect_url}");
 
